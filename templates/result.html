@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="/"> Home</a>
+    <a href="/dashboard"> Dashboard</a>
+    <a href="/history"> Histórico</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2> Resultado da Análise</h2>
+
+        <div class="result">
+
+            {% if result == "FAKE NEWS" %}
+                <p class="fake"> {{ result }}</p>
+            {% else %}
+                <p class="real"> {{ result }}</p>
+            {% endif %}
+
+            <p>Confiança: {{ confidence }}%</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Histórico</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📜 Histórico de Análises</h1>
+
+<table border="1" width="100%">
+
+<tr>
+<th>ID</th>
+<th>Texto</th>
+<th>Resultado</th>
+<th>Confiança</th>
+</tr>
+
+{% for row in data %}
+
+<tr>
+<td>{{ row[0] }}</td>
+<td>{{ row[1][:80] }}...</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}%</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
